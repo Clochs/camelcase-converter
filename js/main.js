@@ -4,7 +4,7 @@ const output = document.querySelector('h2');
 
 function camelCase(str) {
     return str
-    .split('-')
+    .split(/-| /)
     .map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1).toLowerCase()).join('')
 
 
@@ -13,7 +13,7 @@ function camelCase(str) {
 button.addEventListener('click', function() {
     const value = input.value;
     const camelText = camelCase(value);
-    output.textContent = camelText;
+    output.textContent = `Your word is: ${camelText}`;
     input.value = '';
     
 });
